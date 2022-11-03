@@ -11,7 +11,7 @@ class LTEServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/views' => resource_path('views'),
-            __DIR__ . '/public' => public_path('admin'),
+            __DIR__ . '/public' => public_path('/'),
         ]);
     }
 

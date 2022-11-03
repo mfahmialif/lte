@@ -12,19 +12,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                @if (auth()->user()->foto == null)
-                    <img src="{{ 'https://picsum.photos/' . 100 }}" class="img-circle elevation-2"
-                        style="width: 40px;height:40px;object-fit:cover" alt="User Image">
-                @else
-                    @php
-                        $foto = auth()->user()->foto;
-                    @endphp
-                    <img src="{{ asset("/foto_pegawai/$foto") }}" class="img-circle elevation-2"
-                        style="width: 40px;height:40px;object-fit:cover" alt="User Image">
-                @endif
+                <img src="{{ 'https://picsum.photos/' . 100 }}" class="img-circle elevation-2"
+                    style="width: 40px;height:40px;object-fit:cover" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ auth()->user()->email }}</a>
+                <a href="#" class="d-block">Email</a>
             </div>
         </div>
 
@@ -49,9 +41,7 @@
                with font-awesome or any other icon font library -->
                 {{-- Dashboard --}}
                 <li class="nav-item">
-                    <a href="{{ route('admin.dashboard') }}"
-                        class="nav-link {{ request()->routeIs('pegawai.dashboard') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-chart-line bkg-blue"></i>
+                    <a href="#" class="nav-link active' : ''" <i class="nav-icon fas fa-chart-line bkg-blue"></i>
                         <p>
                             Dashboard
                         </p>
@@ -59,43 +49,40 @@
                 </li>
                 {{-- Data Pegawai --}}
                 <li class="nav-item">
-                    <a href="{{ route('pegawai.profil') }}"
-                        class="nav-link {{ request()->routeIs('pegawai.profil*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user bkg-green"></i>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user bkg-red"></i>
                         <p>
-                            Profil
+                            Data Pegawai
                         </p>
                     </a>
                 </li>
-                {{-- Data Pegawai --}}
-                <li class="nav-item">
-                    <a href="{{ route('pegawai.jadwal') }}"
-                        class="nav-link {{ request()->routeIs('pegawai.jadwal*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-list bkg-purple"></i>
+
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link active'">
+                        <i class="nav-icon fas fa-user-friends  bkg-purple"></i>
                         <p>
-                            Jadwal
+                            Riwayat Keluarga
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                </li>
-                {{-- Data Pegawai --}}
-                <li class="nav-item">
-                    <a href="{{ route('pegawai.absensi') }}"
-                        class="nav-link {{ request()->routeIs('pegawai.absensi*') ? 'active' : '' }}"
-                        style="border-bottom: 1px solid #4f5962">
-                        <i class="nav-icon fas fa-fingerprint bkg-yellow"></i>
-                        <p>
-                            Absensi
-                        </p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Suami / Istri</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('logout') }}" class="nav-link" onclick="logout(event)">
+                    <a href="#" class="nav-link " onclick="logout(event)">
                         <i class="nav-icon fas fa-sign-out-alt bkg-red"></i>
                         <p>
                             Logout
                         </p>
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    <form id="logout-form" action="#" method="POST" class="d-none">
                         @csrf
                     </form>
                 </li>

@@ -36,7 +36,7 @@
 
         @include('layouts.master.navbar')
 
-        @include('layouts.master.admin.sidebar')
+        @include('layouts.master.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         @yield('content')
